@@ -4,6 +4,9 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var nunjucks = require('gulp-nunjucks');
+var nunjucksRender = require('gulp-nunjucks-render');
+var nunjucksData = require('gulp-nunjucks-data');
 
 // compile scss to css
 gulp.task('sass', function () {
@@ -26,5 +29,25 @@ gulp.task('minify-js', function () {
         .pipe(gulp.dest('./js'));
 });
 
+gulp.task("nunjucks", () =>
+  // Gets .html and .njk files in pages
+  gulp
+    .src("./pages/**/*.+(html|njk)")
+    // Adding data to Nunjucks
+    // .pipe(
+    //   nunjucksData(() => {
+    //     return require("./data.json");
+    //   })
+    // )
+    // Renders template with nunjucks
+    .pipe(
+      nunjucksRender({
+        path: ["./templates/"]
+      })
+    )
+    // output files in main folder
+    .pipe(gulp.dest("./"))
+);
+
 // default task
-gulp.task('default', ['sass', 'minify-js']);
+gulp.task('default', ['sass', 'minify-js', 'nunjucks']);

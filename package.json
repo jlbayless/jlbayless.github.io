@@ -20,6 +20,10 @@
   "homepage": "https://github.com/rampatra/wedding-website",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-liquid": "^0.1.0",
+    "gulp-nunjucks": "^4.0.0",
+    "gulp-nunjucks-data": "0.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.0"
@@ -27,6 +31,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
+    "nunjucks": "^3.2.0",
     "waypoints": "^4.0.1"
   }
 }
