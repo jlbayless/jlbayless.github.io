@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 // Imports
 @import "partials/typography";
 @import "partials/buttons";
@@ -269,6 +270,8 @@ Hero
   h1 {
     color: $txt-light;
     margin-bottom: 40px;
+    font-family: $title-font;
+    font-size: 80px;
   }
   p.intro {
     color: $txt-light;
@@ -277,12 +280,20 @@ Hero
     margin-bottom: 80px;
   }
   .hero-content {
-    padding-top: 40%;
+    padding-top: 25%;
   }
   .hero-content img {
-    width: 55%;
-    margin-bottom: 12%;
+    width: 15%;
+    margin-bottom: 4%;
   }
+  .flipped {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
 }
 .hero-other {
   min-height: 120px;
