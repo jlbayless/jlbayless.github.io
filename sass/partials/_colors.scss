@@ -1,5 +1,11 @@
 // Colours partial
 
+// Wedding Colors
+$tealblue: #367588;
+$juniper: #09723f;
+$chianti: #932664;
+$sangria: #99005e;
+$ballet: #f4a8c4;
 // Text colours
 $txt-primary: rgba(28, 54, 83, 0.6);
 // body font
@@ -11,9 +17,9 @@ $txt-accent: #ACB1B4;
 $form-placeholder: #BCC1C3;
 // form placeholder text
 // Global colours
-$accent-color: #F4A6D2;
+$accent-color: $sangria;
 // global accent colour
-$accent-color-hover: lighten($accent-color, 10%);
+$accent-color-hover:$ballet;
 // global accent colour hover
 $white-color: #fff;
 $black-color: #000;
