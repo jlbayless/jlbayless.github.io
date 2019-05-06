@@ -6,6 +6,8 @@ $juniper: #09723f;
 $chianti: #932664;
 $sangria: #99005e;
 $ballet: #f4a8c4;
+$tan: lighten(#d2b48c, 24%);
+$wheat: lighten(#f7dcb4, 12%);
 // Text colours
 $txt-primary: rgba(28, 54, 83, 0.6);
 // body font
@@ -28,8 +30,10 @@ $h2-color: #3D4351;
 $h3-color: #3D4351;
 $h5-color: #3D4351;
 // Layout colours
-$section-light: #fff;
-$section-dark: #f8f9fd;
+// $section-light: #fff;
+$section-light: $wheat;
+// $section-dark: #f8f9fd;
+$section-dark: $tan;
 $to-top-bg: #495061;
 $footer-primary: #3D4351;
 $footer-secondary: #373D4A;
