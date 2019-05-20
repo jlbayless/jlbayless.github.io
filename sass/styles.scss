@@ -774,11 +774,13 @@ Engagement Pics
 /* ==========================================================================
 Wedding Party
 ========================================================================== */
-.wedding-party {
-  h3 {
+.wedding-party-body {
+  background: inherit;
+  h1 {
     font-family: $title-font;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    font-size: 30px;
   }
   p {
     padding-top: 5px;
@@ -789,7 +791,12 @@ Wedding Party
   }
 }
 
-
+.wedding-party-header {
+  background: inherit;
+  margin-bottom: 20px;
+  font-family: $title-font;
+  font-size: 60px;
+}
 /* ==========================================================================
 Embed video
 ========================================================================== */
