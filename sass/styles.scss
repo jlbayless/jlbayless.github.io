@@ -8,7 +8,7 @@
 @import "partials/buttons";
 @import "partials/colors";
 @import "partials/layout";
-@import "partials/fluidgallery";
+// @import "partials/fluidgallery";
 
 /* ==========================================================================
 Global Styles
@@ -253,7 +253,8 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  // background: url('../img/hero-min.jpg') center center;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/EngagementPhotos/WalkingFar.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
