@@ -24,9 +24,10 @@
 	border-radius: 40px;
 	display: inline-block;
 	border-color: $txt-light;
+	color: $white-color;
 }
 .btn-white:hover, .btn-white:focus {
-	color: $accent-color;
+	// color: $accent-color;
 	border-color: $accent-color;
 }
 .btn-fill {
