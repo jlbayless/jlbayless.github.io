@@ -23,11 +23,8 @@
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/lightbox2/dist/css/lightbox.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-    <script>
-      baguetteBox.run('.tz-gallery');
-    </script>
 </head>
 <body id="top">
 <section class="hero-other">
@@ -50,9 +47,6 @@
                         </ul>
                     </nav>
                 </div>
-                <!-- <div class="navicon">
-                    <a class="nav-toggle" href="#"><span></span></a>
-                </div> -->
             </div>
         </header>
     </section>
@@ -123,6 +117,15 @@
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
+<script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+<script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'fitImagesInViewport': true,
+      'fadeDuration': 200,
+      'imageFadeDuration': 200;
+    })
+</script>
 <script src="js/scripts.min.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>

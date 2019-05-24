@@ -9,6 +9,7 @@
 @import "partials/colors";
 @import "partials/layout";
 // @import "partials/fluidgallery";
+@import 'baguettebox.js/dist/bagietteBox.min.css';
 
 /* ==========================================================================
 Global Styles
@@ -713,8 +714,8 @@ Engagement Pics
 ========================================================================== */
 #eng-pics {
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 300px;
     -moz-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
     -webkit-transition: all 300ms ease-in-out;
@@ -727,8 +728,8 @@ Engagement Pics
   }
   .img-wrap .overlay {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 25%;
     background-color: rgba(255, 255, 255, 0.5);
     -moz-transition: all 300ms ease-in-out;
     -o-transition: all 300ms ease-in-out;
