@@ -341,6 +341,7 @@ Hero
   background-color: rgba(55, 36, 40, .88);
   z-index: 999;
   width: 100%;
+  height: 125px;
 }
 header {
   padding: 50px 0;
@@ -360,13 +361,20 @@ header {
     }
   }
   .logo {
-    display: inline-block;
+    // display: inline-block;
+    position: absolute;
+    // right: 0;
+    top: 25px;
+    padding: 0;
   }
   .logo img {
-    height: 19px;
+    height: 75px;
   }
   ul.primary-nav {
     margin: 0 0 0 75px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
     padding: 0;
 
     li {
