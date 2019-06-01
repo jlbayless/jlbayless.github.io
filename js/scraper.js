@@ -12,7 +12,6 @@ async function timeout(ms) {
 }
 
 // fs.readFileAsync = util.promisify(fs.readFile);
-
 puppeteer
   .launch({
     // headless: false,
@@ -20,7 +19,6 @@ puppeteer
   })
   .then(async browser => {
     const page = await browser.newPage();
-    console.log('Waiting for page to load');
 
     return page.goto(url, {waitUntil: 'networkidle0'})
     .then(function() { return page.content(); });
@@ -37,22 +35,43 @@ puppeteer
 
     var fileContents = fs.readFileSync(file, 'utf8');
     var arr = fileContents.toString().split('\n');
-    console.log(arr);
     var selector = 'id="registry-container"';
+    var containerStart = arr.findIndex(function(val) {
+      return val.includes(selector);
+    });
 
+    var loopNum = 0;
+    const itemLength = 7; // image + 4 other lines
     items.forEach(function(value) {
+      if (loopNum >= 4) {
+        return; // don't add everything
+      }
+
       var image = '<img class="amazon-item-img" src="';
       image += value.title;
       image += '"></img>';
 
-      var replace = 0;
-      var prevImage = arr[idx + 1];
-      // console.log(prevImage);
-      if (prevImage != undefined && prevImage.includes('<img class="amazon-item-img"')) {
-        replace = 1;
-      }
-      arr.splice(idx, replace, image);
-      // console.log(arr);
+      const itemStart = containerStart + loopNum * itemLength + 1;
+      var prevImage = arr[itemStart + 1]; // image is the first thing in the tile div
+
+      // Going to assume that we will always be replacing for now
+      // var replace = 0;
+      // if (prevImage != undefined && prevImage.includes('<img class="amazon-item-img"')) {
+      //   replace = 1;
+      // }
+      // arr.splice(itemStart + 1, replace, image);
+
+      arr[itemStart + 1] = image;
+
+      loopNum++;
     });
-// fs.writeFile(file, arr, (err) => if (err) throw err;);
+
+    arr.forEach(function(value, index) {
+      arr[index] = value + '\n';
+    });
+    fs.writeFileSync(file, arr.join(''));
+  })
+  .then(() => {
+    console.log('Update Complete');
+    process.exit(0);
   });
