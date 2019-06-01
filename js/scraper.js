@@ -29,9 +29,13 @@ puppeteer
 
     $('div[class="wedding-product-tile"]').each(function() {
       items.push({
-        title: $(this).find('img').attr('src'),
+        imgsrc: $(this).find('img').attr('src'),
+        prodlink: $(this).find('.wedding-product-tile__link').attr('href'),
+        price: $(this).find('.wedding__text--price').text(),
       });
-    })
+    });
+
+    // console.log(items);
 
     var fileContents = fs.readFileSync(file, 'utf8');
     var arr = fileContents.toString().split('\n');
@@ -41,27 +45,28 @@ puppeteer
     });
 
     var loopNum = 0;
-    const itemLength = 7; // image + 4 other lines
+    const itemLength = 4; // image and price
     items.forEach(function(value) {
       if (loopNum >= 4) {
         return; // don't add everything
       }
 
-      var image = '<img class="amazon-item-img" src="';
-      image += value.title;
+      var image = '<a href="https://www.amazon.com';
+      image += value.prodlink;
+      image += '">';
+      image += '<img class="amazon-item-img" src="';
+      image += value.imgsrc;
       image += '"></img>';
+      image += '</a>';
+
+      var price = value.price;
+      price = price.slice(0, -2) + '.' + price.slice(-2);
+      price = '<p>' + price + '</p>';
 
       const itemStart = containerStart + loopNum * itemLength + 1;
-      var prevImage = arr[itemStart + 1]; // image is the first thing in the tile div
-
-      // Going to assume that we will always be replacing for now
-      // var replace = 0;
-      // if (prevImage != undefined && prevImage.includes('<img class="amazon-item-img"')) {
-      //   replace = 1;
-      // }
-      // arr.splice(itemStart + 1, replace, image);
 
       arr[itemStart + 1] = image;
+      arr[itemStart + 2] = price;
 
       loopNum++;
     });
