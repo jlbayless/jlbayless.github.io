@@ -45,7 +45,7 @@ puppeteer
     });
 
     var loopNum = 0;
-    const itemLength = 4; // image and price
+    const itemLength = 5;
     items.forEach(function(value) {
       if (loopNum >= 4) {
         return; // don't add everything
@@ -63,7 +63,7 @@ puppeteer
       price = price.slice(0, -2) + '.' + price.slice(-2);
       price = '<p>' + price + '</p>';
 
-      const itemStart = containerStart + loopNum * itemLength + 1;
+      const itemStart = containerStart + loopNum * itemLength + 3;
 
       arr[itemStart + 1] = image;
       // arr[itemStart + 2] = price;
