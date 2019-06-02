@@ -66,7 +66,7 @@ puppeteer
       const itemStart = containerStart + loopNum * itemLength + 1;
 
       arr[itemStart + 1] = image;
-      arr[itemStart + 2] = price;
+      // arr[itemStart + 2] = price;
 
       loopNum++;
     });
