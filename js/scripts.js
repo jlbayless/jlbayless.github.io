@@ -164,11 +164,11 @@ $(document).ready(function () {
     /********************** Embed youtube video *********************/
     $('.player').YTPlayer();
 
-
     /********************** Toggle Map Content **********************/
     $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+        // window.location.assign('https://www.google.com/maps/place/The+Sanctuary+on+Penn/@39.7768745,-86.1579006,17z/data=!3m1!4b1!4m5!3m4!1s0x886b50c1d1c629a7:0xecefa676f8795935!8m2!3d39.7768745!4d-86.1557119');
+        // $('#map-content').toggleClass('toggle-map-content');
+        // $('#btn-show-content').toggleClass('toggle-map-content');
     });
     $('#btn-show-content').click(function () {
         $('#map-content').toggleClass('toggle-map-content');
